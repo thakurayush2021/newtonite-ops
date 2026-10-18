@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup: create venv and install",
+      "type": "shell",
+      "command": "python3 -m venv .venv && .venv/bin/pip install -r requirements.txt",
+      "windows": { "command": "python -m venv .venv; .venv\\Scripts\\pip install -r requirements.txt" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Reset demo database",
+      "type": "shell",
+      "command": "rm -f newtonite.db newtonite.db-wal newtonite.db-shm && echo done",
+      "windows": { "command": "Remove-Item newtonite.db* -ErrorAction SilentlyContinue; echo done" },
+      "problemMatcher": []
+    }
+  ]
+}
